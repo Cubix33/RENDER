@@ -39,7 +39,7 @@ app.add_middleware(
 )
 
 # ✅ Serve static files
-frontend_path = os.path.abspath("../frontend/dist")
+frontend_path = os.path.join(os.getcwd(), "frontend", "dist")
 if os.path.exists(frontend_path):
     app.mount("/", StaticFiles(directory=frontend_path, html=True), name="static")
     logger.info(f"✅ Serving frontend from {frontend_path}")
