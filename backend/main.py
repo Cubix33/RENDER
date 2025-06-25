@@ -32,11 +32,16 @@ app = FastAPI()
 # ✅ CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+   # CORSMiddleware,
+   # allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
+    #allow_credentials=True,
+    #allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    #allow_headers=["*"],
 
 # ✅ Serve static files
 frontend_path = os.path.join(os.getcwd(), "frontend", "dist")
